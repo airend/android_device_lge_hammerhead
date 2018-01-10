@@ -308,5 +308,15 @@
 
     <!-- Flag indicating which package name can access the persistent data partition -->
     <string name="config_persistentDataPackageName" translatable="false">com.google.android.gms</string>
+    
+        <!-- Enables the TimeZoneRuleManager service. This is the master switch for the updateable time
+         zone update mechanism. -->
+    <bool name="config_enableUpdateableTimeZoneRules">true</bool>
+
+    <!-- Enables APK-based time zone update triggering. Set this to false when updates are triggered
+         via external events and not by APK updates. For example, if an updater checks with a server
+         on a regular schedule.
+         [This is only used if config_enableUpdateableTimeZoneRules is true.] -->
+    <bool name="config_timeZoneRulesUpdateTrackingEnabled">true</bool>
 
 </resources>
