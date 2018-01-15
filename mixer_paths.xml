@@ -51,6 +51,15 @@
     <ctl name="SEC_AUX_PCM_RX Audio Mixer MultiMedia3" value="0" />
     <ctl name="SEC_AUX_PCM_RX Audio Mixer MultiMedia4" value="0" />
     <ctl name="SEC_AUX_PCM_RX Audio Mixer MultiMedia5" value="0" />
+    <ctl name="SEC_AUX_PCM_RX Audio Mixer MultiMedia6" value="0" />
+    <ctl name="SEC_AUX_PCM_RX Audio Mixer MultiMedia7" value="0" />
+    <ctl name="SEC_AUX_PCM_RX Audio Mixer MultiMedia10" value="0" />
+    <ctl name="SEC_AUX_PCM_RX Audio Mixer MultiMedia11" value="0" />
+    <ctl name="SEC_AUX_PCM_RX Audio Mixer MultiMedia12" value="0" />
+    <ctl name="SEC_AUX_PCM_RX Audio Mixer MultiMedia13" value="0" />
+    <ctl name="SEC_AUX_PCM_RX Audio Mixer MultiMedia14" value="0" />
+    <ctl name="SEC_AUX_PCM_RX Audio Mixer MultiMedia15" value="0" />
+    <ctl name="SEC_AUX_PCM_RX Audio Mixer MultiMedia16" value="0" />
     <ctl name="AUX_PCM_RX Audio Mixer MultiMedia5" value="0" />
     <ctl name="AUX_PCM_RX_Voice Mixer CSVoice" value="0" />
     <ctl name="SEC_AUX_PCM_RX_Voice Mixer CSVoice" value="0" />
@@ -136,6 +145,15 @@
     <!-- echo reference end -->
     <ctl name="AFE_PCM_RX_Voice Mixer CSVoice" value="0" />
     <ctl name="Voice_Tx Mixer AFE_PCM_TX_Voice" value="0" />
+	
+	<!-- Audio BTSCO -->
+    <ctl name="SEC_AUX_PCM_RX Audio Mixer MultiMedia1" value="0" />
+    <ctl name="SEC_AUX_PCM_RX Audio Mixer MultiMedia2" value="0" />
+    <ctl name="SEC_AUX_PCM_RX Audio Mixer MultiMedia3" value="0" />
+    <ctl name="SEC_AUX_PCM_RX Audio Mixer MultiMedia4" value="0" />
+    <ctl name="SEC_AUX_PCM_RX Audio Mixer MultiMedia5" value="0" />
+    <ctl name="SEC_AUX_PCM_RX Audio Mixer MultiMedia6" value="0" />
+    <ctl name="MultiMedia1 Mixer SEC_AUX_PCM_UL_TX" value="0" />
 
     <!-- These are audio route (FE to BE) specific mixer settings -->
     <path name="deep-buffer-playback">
@@ -159,6 +177,16 @@
         <ctl name="AUX PCM SampleRate" value="16000" />
         <path name="deep-buffer-playback bt-sco" />
     </path>
+	
+	<path name="deep-buffer-playback speaker-and-bt-sco">
+      <path name="deep-buffer-playback" />
+      <path name="deep-buffer-playback bt-sco" />
+    </path>
+	
+    <path name="deep-buffer-playback speaker-and-bt-sco-wb">
+      <path name="deep-buffer-playback" />
+      <path name="deep-buffer-playback bt-sco-wb" />
+    </path>
 
     <path name="low-latency-playback">
         <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia5" value="1" />
@@ -175,6 +203,26 @@
     <path name="low-latency-playback bt-sco-wb">
         <ctl name="AUX PCM SampleRate" value="16000" />
         <path name="low-latency-playback bt-sco" />
+    </path>
+	
+    <path name="low-latency-playback speaker-and-bt-sco">
+      <path name="low-latency-playback" />
+      <path name="low-latency-playback bt-sco"  />
+    </path>
+
+    <path name="low-latency-playback speaker-and-bt-sco-wb">
+      <path name="low-latency-playback" />
+      <path name="low-latency-playback bt-sco-wb"  />
+    </path>
+	
+    <path name="audio-ull-playback speaker-and-bt-sco">
+      <path name="audio-ull-playback" />
+      <path name="audio-ull-playback bt-sco"  />
+    </path>
+
+    <path name="audio-ull-playback speaker-and-bt-sco-wb">
+      <path name="audio-ull-playback" />
+      <path name="audio-ull-playback bt-sco-wb"  />
     </path>
 
     <path name="low-latency-playback speaker-and-hdmi">
@@ -206,6 +254,16 @@
     <path name="compress-offload-playback speaker-and-hdmi">
         <path name="compress-offload-playback hdmi" />
         <path name="compress-offload-playback" />
+    </path>
+	
+    <path name="compress-offload-playback speaker-and-bt-sco">
+      <path name="compress-offload-playback" />
+      <path name="compress-offload-playback bt-sco"  />
+    </path>
+
+    <path name="compress-offload-playback speaker-and-bt-sco-wb">
+      <path name="compress-offload-playback" />
+      <path name="compress-offload-playback bt-sco-wb"  />
     </path>
 
     <path name="audio-record">
@@ -244,6 +302,18 @@
         <ctl name="AUX PCM SampleRate" value="16000" />
         <path name="voice-call bt-sco" />
     </path>
+	
+    <path name="hfp-sco">
+        <ctl name="HFP_AUX_UL_HL Switch" value="1" />
+        <ctl name="SLIMBUS_0_RX Port Mixer SEC_AUX_PCM_UL_TX" value="1" />
+        <ctl name="SEC_AUX_PCM_RX Audio Mixer MultiMedia6" value="1" />
+        <ctl name="MultiMedia6 Mixer SLIM_0_TX" value="1" />
+        <ctl name="SLIMBUS_DL_HL Switch" value="1" />
+   </path>
+   <path name="hfp-sco-wb">
+        <ctl name="AUX PCM SampleRate" value="16000" />
+        <path name="hfp-sco" />
+   </path>
 
     <path name="voice-call afe-proxy">
         <ctl name="AFE_PCM_RX_Voice Mixer CSVoice" value="1" />
@@ -437,6 +507,7 @@
     <path name="echo-reference">
         <ctl name="EC_REF_RX" value="SLIM_RX" />
     </path>
+	
 
     <path name="dmic-endfire">
         <path name="speaker-dmic-endfire" />
