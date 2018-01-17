@@ -139,6 +139,14 @@
                        sources="primary output,deep_buffer,compressed_offload,BT SCO Headset Mic,Telephony Rx"/>
                 <route type="mix" sink="Wired Headphones"
                        sources="primary output,deep_buffer,compressed_offload,BT SCO Headset Mic,Telephony Rx"/>
+                <route type="mix" sink="HDMI Out"
+                       sources="primary output,deep_buffer,compressed_offload"/>
+                <route type="mix" sink="BT SCO"
+                       sources="primary output,deep_buffer,BT SCO Headset Mic"/>
+                <route type="mix" sink="BT SCO Headset"
+                       sources="primary output,deep_buffer,BT SCO Headset Mic"/>
+                <route type="mix" sink="BT SCO Car Kit"
+                       sources="primary output,deep_buffer,BT SCO Headset Mic"/>		    
                 <route type="mix" sink="Telephony Tx"
                        sources="voice_tx"/>
                 <route type="mix" sink="primary input"
